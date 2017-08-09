@@ -1,0 +1,16 @@
+.container{
+	width:96%;
+}
+header h1{
+	text-align: center;
+}
+header h1 img{
+	max-width: 50%;
+}
+.sacola{
+	display:none;
+}
+.menu-opcoes{
+	position:static;
+	text-align: center;
+}

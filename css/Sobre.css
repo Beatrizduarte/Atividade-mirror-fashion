@@ -1,0 +1,100 @@
+// Documento css Pagina sobre
+
+body{
+	color:#333333;
+	font-family:"Lucida Sans Unicode","Lucida Grande", sans-serif;
+}
+h1 { 
+	background-image: url(../img/sobre-background.jpg); 
+}
+
+h2{
+	border-bottom:2px solid #333333;
+}
+figure{
+	background-color:#F2EDED;
+	border:2px double #ccc;
+	text-align:center;
+}
+figcaption{
+	font-style:italic;
+}
+h1{
+	padding:10px;
+}
+h2{
+	margin-top:30px;
+}
+p{
+	padding:0 45px;
+	text-indent:15px;
+}
+figure{
+	padding:15px;
+	margin:15px;
+}
+figcaption{
+	margin-top:10px;
+}
+body{
+	margin-left: auto;
+	margin-right: auto;
+	width:940px;
+}
+#centro-distribuicao{
+	margin-left:auto;
+	margin-right: auto;
+	width:550px;
+}
+#familia-pelho{
+	float:right;
+	margin:0 0 10px 10px;
+}
+footer{
+	background-image: url(../img/fundo-rodape.png);
+}
+.social a{
+	/*tamanho da imagem*/
+	height:32px;
+	width:32px;
+
+	/*Imagem replacement*/
+	display:block;
+	text-indent: -9999px;
+}
+.social a[href*="facebook.com"]{
+	background-image: url(../img/facebook.png);
+}
+.social a[href*="twitter.com"]{
+	background-image: url(../img/twitter.png);
+}
+.social a[href*="plus.google.com"] { 
+	background-image: url(../img/googleplus.png); 
+}
+footer{
+	clear:both;
+}
+footer { 
+	padding: 20px 0; 
+}
+footer .container { 
+	position: relative; 
+}
+.social { 
+	position: absolute; 
+	top: 12px; 
+	right: 0; 
+}
+.social li { 
+	float: left; 
+	margin-left: 25px; 
+}
+p:first-letter{
+	font-weight:bold;
+}
+h1+p{
+	text-indent: 0;
+}
+:not(p) + p:first-line{
+	font-variant:small-caps;
+}
