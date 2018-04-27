@@ -158,5 +158,7 @@
 		</section>
 	</div>
 	  <?php include("rodape.php"); ?>
+	  <script src="js/converteMoeda.js"></script>
+	  <script src="js/testaConversao.js"></script>
 </body>
 </html> 
