@@ -5,9 +5,10 @@
 	<meta charset="UTF-8"/>
 	<title>Mirror Fashion</title> 
 	<link rel="stylesheet" href="css/reset.css"/>
-	<link rel="stylesheet" href="css/Estilo.css"/>
+	<link rel="stylesheet" href="less/Estilo.less"/>
 	<link rel="stylesheet" href="css/mobile.css" media="(max-width: 939px)"/>
 	<meta name="viewport" content="width=device-width"/>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans|Bad+Script' rel='stylesheet'>
 </head> 
 <body>
 	  <?php include("cabecalho.php"); ?>
@@ -45,120 +46,75 @@
 				</ul>
 			</nav> 
 		</section> <!-- Fim . menu-departamento -->
+		<script type="text/javascript"> /* Banner rotativo */
+			var banners = ["img/destaque-home.png","img/destaque-home-2.png"];
+			var bannerAtual = 0;
+
+			function trocaBanner(){
+				bannerAtual = (bannerAtual + 1) % 2;
+				document.querySelector('.destaque img').src =banners[bannerAtual];
+			}
+
+			setInterval(trocaBanner, 3000);
+		</script>
 		<img src="img/destaque-home.png" alt="Promoção: Big City Night">
 	</div><!-- fim .container . destaque -->
 	<div class="container paineis">
 		<section class="painel novidades">
 			<h2>Novidades</h2>
 			<ol>
-				<!-- primeiro produto-->
-				<li>
-					<a href="produto.html">
+				<?php
+					$conexao = mysqli_connect("179.188.16.168","mirrorfashion","loca1020","mirrorfashion");
+					$dados = mysqli_query($conexao, "SELECT * FROM produtos ORDER BY data DESC LIMIT 0,12");
+					
+					while ($produto = mysqli_fetch_array($dados)):
+				?>
+
+			<li>
+				<a href="produtos.php?id=<?= $produto['id'] ?> ">
 					<figure>
-					<img src="img/produtos/miniatura1.png">
-						<figcaption>Fuzz Cardigan por R$129,90</figcaption>
+						<img src="img/produtos/miniatura<?= $produto['id'] ?>.png" alt="<?= $produto['nome'] ?> ">
+						<figcaption><?= $produto['nome'] ?> por <?= $produto['preco'] ?> </figcaption>
 					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura2.png">
-						<figcaption>Camiseta Bad to the bone por R$39,90</figcaption>
-					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura3.png"/>
-						<figcaption>Cardigan CB Design por R$59,90</figcaption>
-					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura4.png">
-						<figcaption>Casaco CB Design por R$139,90</figcaption>
-					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura5.png">
-						<figcaption>Regata CB Design por R$29,90</figcaption>
-					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura6.png">
-						<figcaption>Regata CB Design por R$29,90</figcaption>
-					</figure>
-					</a>
-				</li>
-			</ol>
+				</a>
+			</li>
+
+		<?php endwhile; ?>
+
+		</ol>
+			<button type="button">Mostra mais</button>
 		</section>
 		<section class="painel mais-vendidos">
 			<h2>Mais Vendidos</h2>
 			<ol>
-				<!-- primeiro produto-->
-				<li>
-					<a href="produto.html">
+				<ol>
+				<?php
+					$conexao = mysqli_connect("179.188.16.168","mirrorfashion","loca1020","mirrorfashion");
+					$dados = mysqli_query($conexao, "SELECT * FROM produtos ORDER BY vendas DESC LIMIT 0,12");
+					
+					while ($produto = mysqli_fetch_array($dados)):
+				?>
+
+			<li>
+				<a href="produtos.php?id=<?= $produto['id'] ?> ">
 					<figure>
-					<img src="img/produtos/miniatura7.png">
-						<figcaption>Camiseta CB Design por R$49,90</figcaption>
+						<img src="img/produtos/miniatura<?= $produto['id'] ?>.png" alt="<?= $produto['nome'] ?> ">
+						<figcaption><?= $produto['nome'] ?> por <?= $produto['preco'] ?> </figcaption>
 					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura8.png">
-						<figcaption>Camiseta CB Design por R$49,90</figcaption>
-					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura9.png">
-						<figcaption>Camiseta xadrez CB Design R$89,90</figcaption>
-					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura10.png">
-						<figcaption>Reglan CB Design R$69,90</figcaption>
-					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura11.png">
-						<figcaption>Short CB Design R$49,90</figcaption>
-					</figure>
-					</a>
-				</li>
-				<li>
-					<a href="produto.png">
-					<figure>
-					<img src="img/produtos/miniatura12.png">
-						<figcaption>Camisa CB Design R$79,90</figcaption>
-					</figure>
-					</a>
-				</li>
-			</ol>
+				</a>
+			</li>
+
+		<?php endwhile; ?>
+
+		</ol>
+			<button type="button">Mostra mais</button>
 		</section>
 	</div>
 	  <?php include("rodape.php"); ?>
+	  <script src="js/jquery.js"></script>
+	  <script src="js/home.js"></script>
 	  <script src="js/converteMoeda.js"></script>
 	  <script src="js/testaConversao.js"></script>
+	  <script src="js/less.js"></script>
 </body>
 </html> 

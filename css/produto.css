@@ -65,6 +65,18 @@ label[for=azul]:after {
 	display:block;
 	max-width:100%;
 }
+.tamanhos output{
+	display: inline-block;
+	height: 44px;
+	width: 44px;
+
+	line-height: 44px;
+	text-align:center;
+
+	border:3px solid #666;
+	border-radius: 50%;
+	color:#555;
+}
 @media (min--moz-device-pixel-ratio:0){
 	fieldset{
 		display:table-column;

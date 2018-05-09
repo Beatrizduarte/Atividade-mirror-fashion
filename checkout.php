@@ -49,9 +49,6 @@
 	<div class="panel-body">
 	<dl>
 
-		<img src="img/produtos/foto2-verde.png" alt="Fuzzy T-Shirt"
-			class="img-thumbnail img-responsive"/>
-
 		<dt>Produto</dt>
 		<dd><?= $_POST['nome'] ?></dd>
 
@@ -96,7 +93,7 @@
 
 				<div>
 					<label form="cpf">CPF</label>
-					<input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" required/>
+					<input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" data-mask="999.999.999-99" required/>
 				</div>
 
 				<div class="checkbox">
@@ -111,7 +108,7 @@
 
 				<div class="form-group">
 					<label for="numero-cartao">Número - CVV</label>
-					<input type="text" class="form-control" id="numero-cartao" name="numero-cartao"/>
+					<input type="text" class="form-control" id="numero-cartao" name="numero-cartao" data-mask="9999 9999 9999 9999 - 999"/>
 				</div>
 
 				<div class="form-group">
@@ -138,6 +135,7 @@
 	</div>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
+	<script src="js/inputmask-plugin.js"></script>
 	<script src="js/converteMoeda.js"></script>
 	<script src="js/testaConversao.js"></script>
 

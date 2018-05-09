@@ -1,4 +1,4 @@
-<!--Pagina 221-->
+<!--Pagina 259 -->
 <!DOCTYPE html> 
 <html>
 <head>
@@ -16,7 +16,7 @@
 	<!--[if lt IE 8]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-		<h1><img src="img/logo.png" alt="Mirror Fashion"/></h1>
+		<h1><a href="http://mirrorfashion.comercial.ws"><img src="img/logo.png" alt="Mirror Fashion"/></a></h1>
 		
 		<p class="sacola">
 			Nenhum item 

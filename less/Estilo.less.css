@@ -1,3 +1,4 @@
+@escuro:#333333;
 .sacola{
 	background: url(../img/sacola.png) no-repeat top right;
 	
@@ -63,7 +64,7 @@ header{
 	
 }
 .menu-departamentos a{
-	color:#333333;
+	color:@escuro;
 	text-decoration:none;
 }
 .busca input{
@@ -90,33 +91,47 @@ header{
 	margin: 10px 0;
 	padding: 10px;
 	width: 445px;
-}
-.novidades{
-	float:left;
-}
-.mais-vendidos{
-	float:right;
-}
-.painel li{
+
+	li{
 	display: inline-block;
 	vertical-align:top;
 	width:140px;
 	
 	margin:2px;
 	padding-bottom:10px;
-}
-.painel h2{
+
+				&:hover{
+				background-color: rgba(255,255,255,0.8);
+				box-shadow: 0 0 5px @escuro;
+				transition: 0.7s ease-in;
+
+				transform: scale(1.2);
+				}
+
+	}
+	h2{
 	font-size: 24px;
 	font-weight: bold;
 	text-transform: uppercase;
 	font-family: 'Bad Script', sans-serif;
 	margin-bottom:10px;
-}
-.painel a{
+	text-shadow: 3px 3px 2px rgba(255,255,255,0.8);
+
+	}
+	a{
 	color:#333;
 	font-size:14px;
 	text-align:center;
 	text-decoration: none;
+
+	}
+
+}
+.novidades{
+	float:left;
+}
+.mais-vendidos{
+	float:right;
 }
 .novidades{
 	background-color:#f5dcdc;
@@ -130,7 +145,7 @@ header{
 	margin-right: 10px;
 	padding: 10px;
 
-	background-color: #333;
+	background-color: @escuro;
 	border:0;
 	border-radius: 4px;
 	box-shadow: 1px 1px 3px rgba(30,30,30,0.5);
@@ -157,7 +172,7 @@ header{
 	width: 0;
 
 	/*TRIANGULO*/
-	border-top: 10px solid #333;
+	border-top: 10px solid @escuro;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
 
@@ -244,9 +259,6 @@ footer .container{
 	border-radius:4px;
 	box-shadow:inset 1px 1px 4px #999;
 }
-.painel h2{
-	text-shadow: 3px 3px 2px rgba(255,255,255,0.8);
-}
 .busca{
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
@@ -258,11 +270,6 @@ footer .container{
 .mais-vendidos{
 	background: #dcdcf5;
 	background: linear-gradient(#dcdcf5, #f4bebe);
-}
-.painel li:hover{
-	background-color: rgba(255,255,255,0.8);
-	box-shadow: 0 0 5px #333;
-	transition: 0.7s ease-in;
 }
 .painel li:hover{
 	transform: scale(1.2);
