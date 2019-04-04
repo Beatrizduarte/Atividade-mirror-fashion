@@ -6,4 +6,4 @@ como HTML,CSS, PHP, Bootstrap, Javascript e Mysql.
 
 Projeto finalizado.
 
-<a href="mirrorfashion.comercial.ws">Site</a>
+Site: mirrorfashion.comercial.ws
